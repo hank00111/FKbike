@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#052339">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/line"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/wifi_ok_img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="10dp"
+        android:onClick="animate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_wifi_24" />
+
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:np_dividerColor="#ffffff"
+        app:np_dividerDistance="150dp"
+        app:np_dividerLength="20dp"
+        app:np_dividerThickness="1dp"
+        app:np_orientation="horizontal"
+        app:np_scrollerEnabled="true"
+        app:np_selectedTextColor="#ffffff"
+        app:np_textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/G_info"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="性別 :"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+    <TextView
+        android:id="@+id/G_in"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:text="男性"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/G_info"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+    <TextView
+        android:id="@+id/Y_info"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:text="年齡 :"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/G_info" />
+
+    <TextView
+        android:id="@+id/Y_in"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:text="0"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/Y_info"
+        app:layout_constraintTop_toBottomOf="@+id/G_info" />
+
+    <TextView
+        android:id="@+id/H_info"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:text="身高 :"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/G_in"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+    <TextView
+        android:id="@+id/H_in"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        android:text="0CM"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/H_info"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+    <TextView
+        android:id="@+id/K_info"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="3dp"
+        android:text="體重 :"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/H_info"
+        app:layout_constraintTop_toBottomOf="@+id/H_info" />
+
+    <TextView
+        android:id="@+id/K_in"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:text="0KG"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toEndOf="@+id/K_info"
+        app:layout_constraintTop_toBottomOf="@+id/H_in" />
+
+    <Button
+        android:id="@+id/setinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:onClick="setinfo"
+        android:text="輸入資料"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_picker" />
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="@drawable/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/K_in" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/line"
+        android:text=" 卡路里"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/calories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="60dp"
+        android:text="已累積"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/T_cal"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:text="0卡"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:entries="@string/cal_text"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/calories"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@drawable/line"
+        android:onClick="dd"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#052339"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/mobile_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
